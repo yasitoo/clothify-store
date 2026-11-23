@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Discover everyday essentials and new-season clothing at Clothify.">
+  <title>CLOTHIFY — Wear your story</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="announcement">FREE SHIPPING ON ORDERS OVER 800 KR</div>
+  <header class="site-header">
+    <a class="logo" href="/">CLOTHIFY<span>.</span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#shop">Shop</a><a href="#story">Our story</a><a href="#footer">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button" id="search-toggle" aria-label="Search products">⌕</button>
+      <button class="cart-button" id="cart-open">Bag <span id="cart-count">0</span></button>
+      <button class="menu-button" id="menu-toggle" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">THE EVERYDAY COLLECTION — 2026</p>
+        <h1>Wear your<br><em>story.</em></h1>
+        <p class="hero-text">Thoughtful pieces. Easy fits. Made to move with you.</p>
+        <a class="button button-dark" href="#shop">Explore collection <span>↗</span></a>
+      </div>
+      <div class="hero-image" role="img" aria-label="Fashion editorial featuring neutral everyday clothing"></div>
+      <div class="hero-note">LESS, BUT BETTER<br><span>EST. 2026</span></div>
+    </section>
+
+    <section class="shop-section section-wrap" id="shop">
+      <div class="section-heading">
+        <div><p class="eyebrow">CURATED FOR YOU</p><h2>Latest arrivals</h2></div>
+        <p class="muted">Pieces you'll keep reaching for.</p>
+      </div>
+      <div class="shop-controls">
+        <div class="category-list" id="categories">
+          <button class="category active" data-category="All">All pieces</button>
+        </div>
+        <label class="search-box" id="search-box"><span>⌕</span><input id="search-input" type="search" placeholder="Search pieces..." aria-label="Search pieces"></label>
+      </div>
+      <div class="product-grid" id="product-grid">
+        <p class="loading">Loading collection…</p>
+      </div>
+    </section>
+
+    <section class="story-section" id="story">
+      <div class="story-image"></div>
+      <div class="story-copy">
+        <p class="eyebrow">A LITTLE LESS, A LOT MORE</p>
+        <h2>Good clothes.<br><em>Good energy.</em></h2>
+        <p>We believe getting dressed should feel simple. CLOTHIFY is a growing collection of versatile essentials, selected to work together and live in your wardrobe for a long time.</p>
+        <a class="text-link" href="#shop">Find your next favourite <span>→</span></a>
+      </div>
+    </section>
+
+    <section class="newsletter section-wrap">
+      <p class="eyebrow">STAY IN THE LOOP</p><h2>Good things, occasionally.</h2>
+      <p class="muted">New drops and updates. No noise.</p>
+      <form id="newsletter-form" class="newsletter-form">
+        <input type="email" placeholder="Your email address" aria-label="Your email address" required>
+        <button class="button button-dark" type="submit">Sign me up</button>
+      </form>
+      <p class="form-note" id="newsletter-note" aria-live="polite">Newsletter demo: connect an email marketing provider before launch.</p>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer">
+    <a class="logo" href="/">CLOTHIFY<span>.</span></a>
+    <p>Everyday pieces. Your own story.</p>
+    <div class="footer-bottom"><span>© <span id="year"></span> CLOTHIFY</span><span>Shipping · Returns · Privacy</span></div>
+  </footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping bag" aria-hidden="true">
+    <div class="drawer-header"><div><p class="eyebrow">YOUR SELECTION</p><h2>Your bag <span id="drawer-count">(0)</span></h2></div><button class="close-button" id="cart-close" aria-label="Close bag">×</button></div>
+    <div class="cart-items" id="cart-items"><p class="empty-cart">Your bag is waiting for something good.</p></div>
+    <div class="cart-footer">
+      <div class="subtotal"><span>Subtotal</span><strong id="cart-subtotal">0 kr</strong></div>
+      <p class="muted tiny">Shipping and taxes are calculated at checkout.</p>
+      <button class="button button-dark full-width" id="checkout-button">Continue to checkout <span>→</span></button>
+      <p class="tiny muted">Secure payment powered by Stripe.</p>
+    </div>
+  </aside>
+
+  <dialog class="product-dialog" id="product-dialog">
+    <button class="close-button dialog-close" id="product-close" aria-label="Close product">×</button>
+    <div id="product-detail"></div>
+  </dialog>
+
+  <dialog class="checkout-dialog" id="checkout-dialog">
+    <button class="close-button dialog-close" id="checkout-close" aria-label="Close checkout">×</button>
+    <p class="eyebrow">ONE LAST STEP</p><h2>Where should we send your receipt?</h2>
+    <form id="checkout-form">
+      <label>Email address<input type="email" id="checkout-email" placeholder="you@example.com" required></label>
+      <p class="muted tiny">You'll continue to Stripe's secure checkout page to pay.</p>
+      <button class="button button-dark full-width" type="submit">Go to secure checkout →</button>
+      <p class="error-message" id="checkout-error" aria-live="polite"></p>
+    </form>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Store admin — CLOTHIFY</title><link rel="stylesheet" href="/styles.css"><style>
+.admin{max-width:1000px;margin:50px auto;padding:0 20px}.admin h1{font:600 42px var(--serif)}.admin-card{background:#eeece5;padding:25px;margin:20px 0}.admin-form{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.admin-form input,.admin-form textarea{padding:12px;border:1px solid #ccc;background:#fff;width:100%}.admin-form textarea{grid-column:1/-1}.admin-form button{grid-column:1/-1}.admin-product{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid #ccc;padding:12px 0;font-size:12px}.admin-note{font-size:11px;color:#777}.hidden{display:none}@media(max-width:600px){.admin-form{grid-template-columns:1fr}}
+</style><script src="/admin.js" defer></script></head>
+<body><header class="site-header"><a class="logo" href="/">CLOTHIFY<span>.</span></a><a href="/">View store ↗</a></header>
+<main class="admin"><p class="eyebrow">STORE MANAGEMENT</p><h1>Admin dashboard</h1>
+<section id="login-panel" class="admin-card"><h2>Admin login</h2><form id="login-form"><input id="admin-password" type="password" placeholder="Admin password" required><button class="button button-dark" type="submit">Sign in</button></form><p id="login-error" class="error-message"></p></section>
+<section id="dashboard" class="hidden">
+  <div class="admin-card"><h2>Add a product</h2><form id="product-form" class="admin-form">
+    <input name="name" placeholder="Product name" required maxlength="100"><input name="price" type="number" min="0" step="1" placeholder="Price in SEK (e.g. 249)" required>
+    <input name="category" placeholder="Category" value="Clothing"><input name="stock" type="number" min="0" step="1" placeholder="Stock quantity" value="10">
+    <input name="image" type="url" placeholder="Image URL (https://...)"><input name="sizes" placeholder="Sizes separated by commas" value="S,M,L,XL">
+    <textarea name="description" placeholder="Product description"></textarea><button class="button button-dark" type="submit">Add product</button>
+  </form><p id="product-message" class="admin-note"></p></div>
+  <div class="admin-card"><div style="display:flex;justify-content:space-between;align-items:center"><h2>Products</h2><button id="logout" class="button button-dark">Log out</button></div><div id="admin-products"></div></div>
+  <div class="admin-card"><h2>Recent orders</h2><div id="admin-orders"></div></div>
+</section></main></body></html>
